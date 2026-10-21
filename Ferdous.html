@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+<html lang="bn"><head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Ferdous</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link href="https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@400;600;700&amp;display=swap" rel="stylesheet">
+<style>
+:root{--bg:#fbfaf5;--sf:#fff;--tx:#1f2a1f;--mu:#6b756b;--pr:#2e7d32;--pr2:#e8f3e8;--bd:#e3e6dc;--wa:#25d366;--rd:#d32f2f;color-scheme:light;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#121712;--sf:#1b231b;--tx:#eef3ee;--mu:#9aa89a;--pr:#66bb6a;--pr2:#223022;--bd:#2c382c;color-scheme:dark}}
+:root[data-theme="dark"]{--bg:#121712;--sf:#1b231b;--tx:#eef3ee;--mu:#9aa89a;--pr:#66bb6a;--pr2:#223022;--bd:#2c382c;color-scheme:dark}
+html{scroll-padding-top:env(safe-area-inset-top,0px)}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--tx);font-family:"Hind Siliguri","Noto Sans Bengali",system-ui,sans-serif;line-height:1.5}
+header{position:sticky;top:env(safe-area-inset-top,0px);z-index:5;display:flex;justify-content:space-between;align-items:center;padding:10px 14px;background:var(--sf);border-bottom:1px solid var(--bd)}
+.logo{font-size:1.15rem;color:var(--pr)}
+button,.btn{font:inherit;cursor:pointer;border:1px solid var(--bd);background:var(--sf);color:var(--tx);padding:7px 12px;border-radius:9px;display:inline-block;text-decoration:none}
+.pri{background:var(--pr);color:#fff;border-color:var(--pr)}
+.wa{background:var(--wa);color:#073b1a;border-color:var(--wa);font-weight:600}
+#bn{margin:12px auto;max-width:1100px;padding:0 12px}
+.ban{border-radius:16px;min-height:170px;display:flex;flex-direction:column;justify-content:center;padding:24px;color:#fff}
+.ban h2{margin:0 0 4px;font-size:1.6rem;text-shadow:0 1px 6px #0006}.ban p{margin:0;text-shadow:0 1px 6px #0006}
+.dots{text-align:center;margin-top:6px}.dots i{display:inline-block;width:8px;height:8px;border-radius:9px;background:var(--bd);margin:0 3px}.dots i.on{background:var(--pr)}
+.chips{display:flex;gap:8px;overflow-x:auto;padding:4px 12px;max-width:1100px;margin:0 auto}
+.chips button{white-space:nowrap;border-radius:20px}.chips .on{background:var(--pr);color:#fff;border-color:var(--pr)}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(160px,1fr));gap:12px;padding:12px;max-width:1100px;margin:0 auto}
+.card{background:var(--sf);border:1px solid var(--bd);border-radius:14px;overflow:hidden;display:flex;flex-direction:column}
+.pic{aspect-ratio:1;background:var(--pr2);display:flex;align-items:center;justify-content:center;position:relative}
+.pic img{width:100%;height:100%;object-fit:cover}.ph{font-size:3.5rem}
+.off{position:absolute;top:8px;left:8px;background:var(--rd);color:#fff;font-size:.75rem;padding:1px 7px;border-radius:8px}
+.info{padding:10px;display:flex;flex-direction:column;gap:6px;flex:1}
+.info h3{margin:0;font-size:.95rem}.price{color:var(--pr);font-weight:700}.price s{color:var(--mu);font-weight:400;font-size:.85rem;margin-left:4px}
+.info .btn{width:100%;text-align:center;font-size:.85rem;padding:6px}
+footer{padding:22px 14px 90px;text-align:center;color:var(--mu);border-top:1px solid var(--bd);margin-top:18px}
+.fab{position:fixed;right:14px;bottom:calc(14px + env(safe-area-inset-bottom,0px));z-index:6;border-radius:30px;padding:10px 16px;box-shadow:0 3px 12px #0004}
+.drawer,.ov{position:fixed;inset:0;z-index:20;background:#0007;display:none}
+.drawer.open,.ov.open{display:flex;justify-content:flex-end}
+.panel{background:var(--bg);width:min(460px,100%);height:100%;overflow:auto;padding:14px;padding-top:calc(14px + env(safe-area-inset-top,0px))}
+.ov .panel{width:min(760px,100%);margin:0 auto}
+.row{display:flex;gap:8px;align-items:center;margin:6px 0}.row>*{flex:1}.row .btn,.row button{flex:none}
+input,textarea{width:100%;font:inherit;padding:8px;border:1px solid var(--bd);border-radius:8px;background:var(--sf);color:var(--tx);margin:3px 0}
+.c2{background:var(--sf);border:1px solid var(--bd);border-radius:12px;padding:10px;margin:10px 0}
+.thumb{width:56px;height:56px;border-radius:8px;background:var(--pr2);object-fit:cover;display:flex;align-items:center;justify-content:center;font-size:1.6rem;flex:none;overflow:hidden}
+.thumb img{width:100%;height:100%;object-fit:cover}.thumb .ph{font-size:1.6rem}
+.big{aspect-ratio:1;border-radius:14px;overflow:hidden;background:var(--pr2);display:flex;align-items:center;justify-content:center;margin-bottom:10px}.big img{width:100%;height:100%;object-fit:cover}.big .ph{font-size:6rem}
+.desc{white-space:pre-wrap}
+.tabs{display:flex;gap:6px;margin:10px 0}.tabs .on{background:var(--pr);color:#fff}
+small{color:var(--mu)}
+.stp{display:flex;flex-wrap:wrap;align-items:center;justify-content:center;gap:8px;margin:2px 0}
+.stp button{width:32px;height:32px;padding:0;border-radius:50%;font-size:1.1rem;font-weight:700;line-height:1}
+.stp b{min-width:24px;text-align:center}
+.stp .tot{flex-basis:100%;text-align:center;font-size:.8rem;color:var(--pr)}
+.hl{width:28px;height:28px;border-radius:50%;object-fit:cover;vertical-align:middle}
+.lg{position:fixed;inset:0;width:100%;display:flex;align-items:center;justify-content:center;padding:18px;overflow:hidden;background:linear-gradient(135deg,#0b3d1e,#1b5e20 45%,#00695c);background-size:220% 220%;animation:gx 14s ease infinite,fin .5s ease both}
+@keyframes gx{0%{background-position:0 50%}50%{background-position:100% 50%}100%{background-position:0 50%}}
+@keyframes fin{from{opacity:0}to{opacity:1}}
+.bl{position:absolute;border-radius:50%;filter:blur(55px);opacity:.5;animation:fl 9s ease-in-out infinite}
+.b1{width:280px;height:280px;background:#a5d6a7;top:-70px;left:-70px}.b2{width:320px;height:320px;background:#ffd54f;bottom:-90px;right:-70px;animation-delay:-3s}.b3{width:200px;height:200px;background:#4dd0e1;top:45%;left:55%;animation-delay:-6s}
+@keyframes fl{0%,100%{transform:translate(0,0) scale(1)}50%{transform:translate(30px,-40px) scale(1.12)}}
+.lc{position:relative;width:min(400px,100%);padding:34px 26px 24px;border-radius:26px;background:rgba(255,255,255,.14);border:1px solid rgba(255,255,255,.3);-webkit-backdrop-filter:blur(18px);backdrop-filter:blur(18px);color:#fff;text-align:center;box-shadow:0 24px 70px #0006;animation:up .8s cubic-bezier(.2,.8,.2,1) both}
+@keyframes up{from{opacity:0;transform:translateY(34px) scale(.96)}to{opacity:1;transform:none}}
+.lring{position:relative;width:98px;height:98px;margin:0 auto 12px}
+.lring::before{content:'';position:absolute;inset:0;border-radius:50%;background:conic-gradient(#fff,#ffd54f,#69f0ae,#4dd0e1,#fff);animation:spin 5s linear infinite}
+.lav{position:absolute;inset:4px;border-radius:50%;background:#14301a;display:flex;align-items:center;justify-content:center;font-size:2.7rem;overflow:hidden;animation:pulse 3s ease-in-out infinite}
+.lav img{width:100%;height:100%;object-fit:cover}
+@keyframes spin{to{transform:rotate(360deg)}}
+@keyframes pulse{0%,100%{box-shadow:0 0 0 0 #69f0ae66}50%{box-shadow:0 0 0 12px #69f0ae00}}
+.lc h2{margin:6px 0 2px;font-size:1.35rem}.ls{margin:0 0 16px;opacity:.85;font-size:.9rem;letter-spacing:.3px}
+.fi{display:flex;align-items:center;gap:8px;background:rgba(255,255,255,.18);border:1px solid rgba(255,255,255,.3);border-radius:14px;padding:2px 12px;margin:10px 0;transition:.25s}
+.fi:focus-within{background:rgba(255,255,255,.28);border-color:#fff;box-shadow:0 0 0 3px #ffffff44;transform:translateY(-1px)}
+.fi input{background:transparent;border:0;color:#fff;margin:0;outline:0;padding:12px 4px}.fi input::placeholder{color:#ffffffb8}
+.eye{cursor:pointer;opacity:.85}
+#le{min-height:1.4em;color:#ffcdd2;margin:6px 0;font-size:.9rem}
+.lb{width:100%;border:0;border-radius:14px;padding:13px;font:inherit;font-weight:700;font-size:1rem;color:#0b3d1e;background:linear-gradient(90deg,#fff,#c8e6c9,#fff);background-size:200% 100%;animation:shine 3s linear infinite;position:relative;cursor:pointer;transition:transform .15s}
+.lb:active{transform:scale(.97)}.lb.ld span{opacity:0}
+.lb.ld::after{content:'';position:absolute;left:50%;top:50%;width:20px;height:20px;margin:-10px;border:3px solid #0b3d1e55;border-top-color:#0b3d1e;border-radius:50%;animation:spin .7s linear infinite}
+@keyframes shine{to{background-position:-200% 0}}
+.lsec{display:block;margin-top:14px;color:#ffffffb8}
+.lx{position:absolute;top:calc(14px + env(safe-area-inset-top,0px));right:14px;z-index:2;background:#ffffff26;color:#fff;border-color:#ffffff44}
+.lc.shake{animation:shk .45s}@keyframes shk{20%,60%{transform:translateX(-9px)}40%,80%{transform:translateX(9px)}}
+.lc.ok{animation:okk .55s forwards}@keyframes okk{to{opacity:0;transform:scale(1.06) translateY(-10px)}}
+@media (prefers-reduced-motion:reduce){.lg,.lg *,.lg *::before{animation:none!important}}
+select{width:100%;font:inherit;padding:8px;border:1px solid var(--bd);border-radius:8px;background:var(--sf);color:var(--tx);margin:3px 0}
+:root{--ac:#f4b400;--sh:0 6px 24px rgba(20,60,30,.10)}
+body{background:radial-gradient(1200px 500px at 50% -120px,var(--pr2),transparent),var(--bg)}
+header{background:color-mix(in srgb,var(--sf) 82%,transparent);-webkit-backdrop-filter:blur(14px);backdrop-filter:blur(14px);box-shadow:var(--sh);padding:12px 18px}
+.logo{font-size:1.25rem;font-weight:700;display:flex;align-items:center;gap:8px}
+.ban{min-height:240px;border-radius:24px;padding:34px 28px;position:relative;overflow:hidden;animation:bin .8s cubic-bezier(.2,.8,.2,1) both;box-shadow:var(--sh)}
+.ban::after{content:'';position:absolute;inset:0;background:radial-gradient(circle at 85% 15%,#ffffff33,transparent 45%);pointer-events:none}
+.ban h2{font-size:clamp(1.6rem,5vw,2.4rem);line-height:1.2}
+@keyframes bin{from{opacity:0;transform:scale(1.03)}to{opacity:1;transform:none}}
+.dots i{transition:.3s}.dots i.on{width:22px}
+.trust{display:flex;justify-content:center;flex-wrap:wrap;gap:6px 18px;max-width:1100px;margin:6px auto 2px;padding:0 12px;font-size:.85rem;color:var(--mu)}
+.chips{padding:10px 12px;scrollbar-width:none}.chips::-webkit-scrollbar{display:none}
+.chips button{display:flex;align-items:center;gap:6px;padding:8px 16px;border-radius:30px;transition:.25s;box-shadow:var(--sh)}
+.chips button i{font-style:normal}.chips button:hover{transform:translateY(-2px)}
+.chips .on{background:linear-gradient(135deg,var(--pr),#66bb6a)}
+.sec{max-width:1100px;margin:10px auto 0;padding:0 14px}.sec h2{margin:0;font-size:1.3rem;display:inline-block}
+.sec h2::after{content:'';display:block;height:4px;width:60%;margin-top:4px;border-radius:4px;background:linear-gradient(90deg,var(--ac),transparent)}
+.grid{gap:16px;grid-template-columns:repeat(auto-fill,minmax(170px,1fr))}
+.card{border-radius:20px;box-shadow:var(--sh);transition:transform .35s cubic-bezier(.2,.8,.2,1),box-shadow .35s;animation:cin .6s cubic-bezier(.2,.8,.2,1) both;animation-delay:calc(var(--i,0)*60ms)}
+.card:hover{transform:translateY(-6px);box-shadow:0 14px 34px rgba(20,60,30,.18)}
+@keyframes cin{from{opacity:0;transform:translateY(24px)}to{opacity:1;transform:none}}
+.pic img,.pic .ph{transition:transform .5s}.card:hover .pic img,.card:hover .pic .ph{transform:scale(1.08)}
+.off{background:linear-gradient(135deg,#e53935,#ff7043);font-weight:700;box-shadow:0 2px 8px #0003}
+.info h3{font-size:.98rem;line-height:1.35;min-height:2.6em}.price{font-size:1.1rem}
+.info .btn{border-radius:12px;padding:9px;transition:.2s}
+.btn.wa{background:linear-gradient(135deg,#25d366,#128c7e);color:#fff;border:0;box-shadow:0 4px 14px #25d36655}
+.btn.wa:hover{transform:translateY(-2px);filter:brightness(1.06)}.btn.wa:active{transform:scale(.97)}
+footer{background:linear-gradient(135deg,#0f3d1c,#1b5e20);color:#e8f5e9;border-top:0;margin-top:30px;border-radius:28px 28px 0 0;padding:30px 16px 96px}
+footer b{font-size:1.15rem}footer a{color:#c8e6c9!important}
+.fab{animation:fabp 2.6s ease-in-out infinite}@keyframes fabp{0%,100%{box-shadow:0 3px 12px #0004,0 0 0 0 #25d36680}50%{box-shadow:0 3px 12px #0004,0 0 0 12px #25d36600}}
+.panel{animation:pin .35s cubic-bezier(.2,.8,.2,1)}@keyframes pin{from{transform:translateX(40px);opacity:0}to{transform:none;opacity:1}}
+@media (prefers-reduced-motion:reduce){.card,.ban,.fab,.panel{animation:none!important}.card{transition:none}}
+</style>
+</head>
+<body>
+<div id="app"></div>
+<div id="admin" class="ov"></div>
+<script id="data" type="application/json">{"auth":"d4278e874f5c9f92621724b9f53498c7c079375537a6f018ea5a9526e4f68194","shop":{"logo":"","name":"আপনার অর্গানিক শপ","tagline":"খাঁটি ও প্রাকৃতিক খাবার, ঘরে বসেই","phone":"01735065394","address":" মিরপুর-১ ঢাকা","email":"ferdous@gmail.com","btnOrder":"অর্ডার করুন","btnDetail":"বিস্তারিত দেখুন","formTitle":"অর্ডার করতে আপনার তথ্য দিন","submit":"অর্ডার সাবমিট করুন","fab":"WhatsApp","adminLink":"Admin","mapUrl":"","t1":"🌿 ১০০% প্রাকৃতিক","t2":"🚚 দ্রুত ডেলিভারি","t3":"💬 সহজ WhatsApp অর্ডার","sectionTitle":"আমাদের পণ্য","adminImg":"/_blob/eefec6a860ba6e4bc318e1fee7a81c0b","logoImg":"/_blob/f91b55d25242361c6043ce02e8e321a9","sendNote":"সাবমিট চাপলে WhatsApp খুলবে। সেখানে অবশ্যই \"Send\" (পাঠান) বাটন চাপুন, নইলে আপনার অর্ডার আমাদের কাছে পৌঁছাবে না।"},"cats":[{"name":"সিড মিক্স","icon":"🌻"},{"name":"নাট মিক্স","icon":"🥜"},{"name":"মধু","icon":"🍯"},{"name":"অর্গানিক অয়েল","icon":"🥥"},{"name":"কম্বো","icon":"🎁"}],"banners":[{"title":"স্বাস্থ্যকর সিড মিক্স","sub":"বিশেষ ছাড়ে এখনই অর্ডার করুন","img":"","bg":"linear-gradient(135deg,#2e7d32,#9ccc65)"},{"title":"খাঁটি মধু ও বাদাম","sub":"সারা দেশে ডেলিভারি","img":"","bg":"linear-gradient(135deg,#ef6c00,#ffca28)"}],"products":[{"id":1,"name":"এভরিডে সিড মিক্স ৫০০ গ্রাম","price":900,"old":1100,"cat":"সিড মিক্স","emoji":"🌻","img":"/_blob/0ef4a1bdacfa645d511d5e2350a4c879","desc":"বীজের পুষ্টিকর মিশ্রণ।\nপ্রতিদিনের হেলদি স্ন্যাকস হিসেবে উপযোগী।"},{"id":2,"name":"প্রিমিয়াম নাট মিক্স ৩২৫ গ্রাম","price":1050,"old":1200,"cat":"নাট মিক্স","emoji":"🥜","img":"","desc":"বাছাই করা বাদামের মিশ্রণ।"},{"id":3,"name":"প্রাকৃতিক চাকের মধু ৫০০ গ্রাম","price":850,"old":1000,"cat":"মধু","emoji":"🍯","img":"","desc":"১০০% খাঁটি মধু।"},{"id":4,"name":"কোল্ড প্রেসড নারকেল তেল ১০০ মি.লি.","price":250,"old":300,"cat":"অর্গানিক অয়েল","emoji":"🥥","img":"","desc":"ঘানিতে ভাঙানো নারকেল তেল।"},{"id":5,"name":"কালোজিরা তেল ১০০ মি.লি.","price":350,"old":400,"cat":"অর্গানিক অয়েল","emoji":"🌿","img":"","desc":"প্রাকৃতিক কালোজিরা তেল।"},{"id":6,"name":"কম্বো প্যাক (সিড + মধু)","price":1600,"old":1900,"cat":"কম্বো","emoji":"🎁","img":"","desc":"উপহারের জন্য সেরা কম্বো।"}]}</script>
+<script>
+const D=JSON.parse(document.getElementById('data').textContent);
+if(!D.cats)D.cats=[...new Set(D.products.map(p=>p.cat).filter(Boolean))].map(n=>({name:n,icon:'🌿'}));
+let curUser='',authed=false,cat='সব',bi=0,view=null,tab='p',dirty=false,fm={n:'',p:'',e:'',a:''};
+const $=s=>document.querySelector(s);
+const esc=s=>String(s==null?'':s).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+const tk=n=>'৳'+Number(n||0).toLocaleString('bn-BD');
+const pic=p=>p.img?`<img src="${esc(p.img)}" alt="">`:`<span class="ph">${esc(p.emoji||'🌿')}</span>`;
+const waUrl=m=>{let n=String(D.shop.phone).replace(/\D/g,'');if(n[0]==='0')n='88'+n;return 'https://wa.me/'+n+'?text='+encodeURIComponent(m)};
+const cats=()=>['সব',...D.cats.map(c=>c.name)];
+const ico=n=>n==='সব'?'🛍️':((D.cats.find(c=>c.name===n)||{}).icon||'');
+
+function store(){
+  const S=D.shop,ps=D.products.filter(p=>cat==='সব'||p.cat===cat),v=D.products.find(p=>p.id===view);
+  $('#app').innerHTML=`
+  <header><b class="logo">${S.logoImg?`<img class="hl" src="${esc(S.logoImg)}" alt="">`:esc(S.logo)} ${esc(S.name)}</b><div>${authed?'<button onclick="openAdmin()">⚙️ অ্যাডমিন</button>':''}</div></header>
+  <section id="bn"></section>
+  <div class="trust"><span>${esc(S.t1||'')}</span><span>${esc(S.t2||'')}</span><span>${esc(S.t3||'')}</span></div>
+  <div class="chips">${cats().map(c=>`<button class="${c===cat?'on':''}" onclick="setCat(this.dataset.c)" data-c="${esc(c)}"><i>${esc(ico(c))}</i>${esc(c)}</button>`).join('')}</div>
+  <div class="sec"><h2>${esc(S.sectionTitle||'আমাদের পণ্য')}</h2></div>
+  <main class="grid">${ps.map((p,ix)=>`<div class="card" style="--i:${ix}"><div class="pic" style="cursor:pointer" onclick="openP(${p.id})">${pic(p)}${p.old>p.price?`<span class="off">-${Math.round((1-p.price/p.old)*100)}%</span>`:''}</div>
+   <div class="info"><h3>${esc(p.name)}</h3><div class="price">${tk(p.price)}${p.old>p.price?`<s>${tk(p.old)}</s>`:''}</div>
+   <button class="btn wa" onclick="openP(${p.id})">${esc(S.btnOrder)}</button>
+   </div></div>`).join('')||'<p>কোনো পণ্য নেই</p>'}</main>
+  <footer><b>${esc(S.name)}</b><br>${esc(S.tagline)}<br>📍 ${esc(S.address)} · 📞 ${esc(S.phone)} · ✉️ ${esc(S.email)}${S.mapUrl&&S.mapUrl.startsWith('http')?` · <a href="${esc(S.mapUrl)}" target="_blank" rel="noopener" style="color:var(--pr)">🗺️ ম্যাপে দেখুন</a>`:''}<br><a href="#" onclick="loginBox();return false" style="color:var(--mu);font-size:.8rem">🔐 ${esc(S.adminLink)}</a></footer>
+  <a class="fab btn wa" target="_blank" rel="noopener" href="${esc(waUrl('আসসালামু আলাইকুম, আমি কিছু জানতে চাই'))}">💬 ${esc(S.fab)}</a>
+  <div class="drawer ${v?'open':''}" onclick="if(event.target===this)closeP()"><div class="panel">${v?detail(v):''}</div></div>`;
+  banner();
+}
+function setCat(c){cat=c;store()}
+function banner(){
+  const el=$('#bn');if(!el)return;if(!D.banners.length){el.innerHTML='';return}
+  bi%=D.banners.length;const b=D.banners[bi];
+  el.innerHTML=`<div class="ban" style="background:${b.img?`url('${esc(b.img)}') center/cover`:esc(b.bg||'#2e7d32')}"><h2>${esc(b.title)}</h2><p>${esc(b.sub)}</p></div><div class="dots">${D.banners.map((_,i)=>`<i class="${i===bi?'on':''}"></i>`).join('')}</div>`;
+}
+function detail(p){
+  const S=D.shop;
+  return `<div class="row"><b style="flex:1">${esc(p.name)}</b><button onclick="closeP()">✕</button></div>
+  <div class="big">${pic(p)}</div>
+  <div class="price" style="font-size:1.2rem">${tk(p.price)}${p.old>p.price?`<s>${tk(p.old)}</s>`:''}</div>
+  <p class="desc">${esc(p.desc)}</p>
+  <div class="c2"><b>${esc(S.formTitle)}</b>
+   <input placeholder="আপনার নাম *" value="${esc(fm.n)}" oninput="fm.n=this.value" autocomplete="name">
+   <input type="tel" placeholder="ফোন নাম্বার *" value="${esc(fm.p)}" oninput="fm.p=this.value" autocomplete="tel">
+   <input type="email" placeholder="ইমেইল (ঐচ্ছিক)" value="${esc(fm.e)}" oninput="fm.e=this.value" autocomplete="email">
+   <textarea rows="3" placeholder="ঠিকানা *" oninput="fm.a=this.value">${esc(fm.a)}</textarea>
+   <div style="margin:8px 0"><b>কতটি নিবেন?</b>${stepper(p.id)}</div><p style="background:var(--pr2);padding:8px;border-radius:8px;margin:8px 0">📲 <b>${esc(S.sendNote||'')}</b></p><p id="fe" style="color:var(--rd);margin:4px 0"></p>
+   <button class="btn wa" style="width:100%" onclick="submitOrder(${p.id})">${esc(S.submit)}</button></div>`;
+}
+function openP(id){view=id;store()}
+function closeP(){view=null;store()}
+function buy(id){return buy2(id)}
+function oldBuy(id){const p=D.products.find(x=>x.id===id);window.open(waUrl(`আসসালামু আলাইকুম, আমি এই পণ্যটি অর্ডার করতে চাই:\n${p.name} - ${tk(p.price)}`),'_blank')}
+function submitOrder(id){return submit2(id)}
+function oldSubmit(id){
+  const p=D.products.find(x=>x.id===id);
+  if(!fm.n.trim()||!fm.p.trim()||!fm.a.trim()){$('#fe').textContent='নাম, ফোন নাম্বার ও ঠিকানা দিন';return}
+  window.open(waUrl(`আসসালামু আলাইকুম, আমি অর্ডার করতে চাই:\n\nপণ্য: ${p.name}\nদাম: ${tk(p.price)}\n\nনাম: ${fm.n.trim()}\nফোন: ${fm.p.trim()}\nইমেইল: ${fm.e.trim()||'-'}\nঠিকানা: ${fm.a.trim()}`),'_blank');
+}
+
+/* ---------- Admin ---------- */
+async function sha(s){const b=await crypto.subtle.digest('SHA-256',new TextEncoder().encode(s));return [...new Uint8Array(b)].map(x=>x.toString(16).padStart(2,'0')).join('')}
+function loginBox(){return newLogin()}
+function oldLogin(){
+  $('#admin').classList.add('open');
+  $('#admin').innerHTML=`<div class="panel"><div class="row"><b style="flex:1">🔐 অ্যাডমিন লগইন</b><button onclick="closeAdmin()">✕</button></div><div class="c2"><input id="lu" type="tel" placeholder="ফোন নম্বর (ইউজার আইডি)" autocomplete="username"><input id="lp" type="password" placeholder="পাসওয়ার্ড" autocomplete="current-password"><p id="le" style="color:var(--rd)"></p><button class="btn pri" style="width:100%" onclick="doLogin()">লগইন</button></div></div>`;
+}
+async function doLogin(){return newDoLogin()}
+async function oldDoLogin(){
+  const h=await sha($('#lu').value.trim()+':'+$('#lp').value+':shop-v1');
+  if(h===D.auth){authed=true;curUser=$('#lu').value.trim();store();adm()}else $('#le').textContent='ফোন নম্বর বা পাসওয়ার্ড ভুল';
+}
+function openAdmin(){$('#admin').classList.add('open');adm()}
+function closeAdmin(){$('#admin').classList.remove('open')}
+function mark(){dirty=true;const s=$('#dirty');if(s)s.innerHTML='<small>● সেভ হয়নি</small>'}
+const FIELDS=[['phone','WhatsApp নম্বর (যেমন 01735065394)'],['address','ঠিকানা'],['email','ইমেইল'],['mapUrl','Google Maps লোকেশন লিংক (ঐচ্ছিক)'],['logo','লোগো ইমোজি'],['name','দোকানের নাম'],['tagline','ট্যাগলাইন'],['btnOrder','অর্ডার বাটনের লেখা'],['formTitle','ফর্মের শিরোনাম'],['submit','সাবমিট বাটনের লেখা'],['fab','ভাসমান WhatsApp বাটনের লেখা'],['adminLink','অ্যাডমিন লিংকের লেখা'],['sendNote','"Send চাপুন" নির্দেশনার লেখা'],['sectionTitle','পণ্য অংশের শিরোনাম'],['t1','সুবিধা ১ (ব্যানারের নিচে)'],['t2','সুবিধা ২'],['t3','সুবিধা ৩']];
+function adm(){
+  let body='';
+  if(tab==='p')body=D.products.map((p,i)=>`<div class="c2"><div class="row"><div class="thumb">${pic(p)}</div>
+   <label class="btn">📷 ছবি বদলান<input type="file" accept="image/*" hidden onchange="up(this,'products',${i})"></label><button onclick="del('products',${i})">🗑</button></div>
+   <input placeholder="পণ্যের নাম" value="${esc(p.name)}" onchange="set('products',${i},'name',this.value)">
+   <div class="row"><input type="number" placeholder="বর্তমান দাম" value="${p.price}" onchange="set('products',${i},'price',+this.value)"><input type="number" placeholder="আগের দাম" value="${p.old}" onchange="set('products',${i},'old',+this.value)"></div>
+   <select onchange="set('products',${i},'cat',this.value)"><option value="">— ক্যাটাগরি বাছুন —</option>${D.cats.map(c=>`<option ${c.name===p.cat?'selected':''} value="${esc(c.name)}">${esc(c.icon)} ${esc(c.name)}</option>`).join('')}</select>
+   <textarea rows="4" placeholder="পণ্যের বিবরণ (ডেসক্রিপশন)" onchange="set('products',${i},'desc',this.value)">${esc(p.desc)}</textarea>
+   <input placeholder="ইমোজি (ছবি না থাকলে)" value="${esc(p.emoji)}" onchange="set('products',${i},'emoji',this.value)"></div>`).join('')+`<button class="pri btn" onclick="addItem('products')">+ নতুন পণ্য</button>`;
+  if(tab==='c')body=catBox();
+  if(tab==='b')body=D.banners.map((b,i)=>`<div class="c2"><div class="row"><div class="thumb" style="background:${b.img?`url('${esc(b.img)}') center/cover`:esc(b.bg)}"></div>
+   <label class="btn">📷 ব্যানার ছবি<input type="file" accept="image/*" hidden onchange="up(this,'banners',${i})"></label><button onclick="del('banners',${i})">🗑</button></div>
+   <input placeholder="শিরোনাম" value="${esc(b.title)}" onchange="set('banners',${i},'title',this.value)">
+   <input placeholder="উপশিরোনাম" value="${esc(b.sub)}" onchange="set('banners',${i},'sub',this.value)"></div>`).join('')+`<button class="pri btn" onclick="addItem('banners')">+ নতুন ব্যানার</button>`;
+  if(tab==='s')body=imgBox()+'<p><b>📍 যোগাযোগের তথ্য — প্রথম ৪টি ঘর বদলালে সাইটের নিচে সাথে সাথে বদলে যায়</b></p>'+FIELDS.map(([k,l])=>`<label><small>${l}</small><input value="${esc(D.shop[k])}" onchange="D.shop['${k}']=this.value;mark();store()"></label>`).join('')+pwBox();
+  $('#admin').innerHTML=`<div class="panel"><div class="row"><div class="thumb" style="border-radius:50%">${D.shop.adminImg?`<img src="${esc(D.shop.adminImg)}" alt="">`:'👤'}</div><b style="flex:1">⚙️ অ্যাডমিন প্যানেল</b><span id="dirty">${dirty?'<small>● সেভ হয়নি</small>':''}</span><button onclick="closeAdmin()">✕</button></div>
+  <div class="tabs">${[['p','পণ্য'],['c','ক্যাটাগরি'],['b','ব্যানার'],['s','লেখা ও সেটিংস']].map(([k,l])=>`<button class="${tab===k?'on':''}" onclick="tab='${k}';adm()">${l}</button>`).join('')}</div>${body}
+  <div style="position:sticky;bottom:0;padding:10px 0;background:var(--bg)"><button class="btn pri" style="width:100%" onclick="save()">💾 সেভ ও প্রকাশ করুন</button></div></div>`;
+}
+function pwBox(){return `<div class="c2"><b>🔑 পাসওয়ার্ড / ইউজার আইডি বদলান</b><input id="pu" type="tel" placeholder="ইউজার আইডি (ফোন নম্বর)" value="${esc(curUser)}"><input id="pc" type="password" placeholder="বর্তমান পাসওয়ার্ড"><input id="pn" type="password" placeholder="নতুন পাসওয়ার্ড (কমপক্ষে ৮ অক্ষর)"><input id="pn2" type="password" placeholder="নতুন পাসওয়ার্ড আবার লিখুন"><p id="pm" style="margin:4px 0"></p><button class="btn pri" onclick="changePw()">পাসওয়ার্ড বদলান</button></div>`}
+async function changePw(){
+  const m=$('#pm'),say=(t,ok)=>{m.style.color=ok?'var(--pr)':'var(--rd)';m.textContent=t};
+  const u=$('#pu').value.trim(),c=$('#pc').value,n=$('#pn').value,n2=$('#pn2').value;
+  if(!u)return say('ইউজার আইডি দিন');
+  if(await sha(curUser+':'+c+':shop-v1')!==D.auth)return say('বর্তমান পাসওয়ার্ড ভুল');
+  if(n.length<8)return say('নতুন পাসওয়ার্ড কমপক্ষে ৮ অক্ষরের হতে হবে');
+  if(n!==n2)return say('দুটি পাসওয়ার্ড মেলেনি');
+  D.auth=await sha(u+':'+n+':shop-v1');curUser=u;mark();
+  say('হয়েছে! এখন নিচের "সেভ ও প্রকাশ করুন" চাপুন, নইলে নতুন পাসওয়ার্ড চালু হবে না',true);
+}
+function newLogin(){
+  const S=D.shop,A=$('#admin'),av=S.adminImg||S.logoImg;A.classList.add('open');
+  A.innerHTML=`<div class="lg"><i class="bl b1"></i><i class="bl b2"></i><i class="bl b3"></i>
+  <button class="lx" onclick="closeAdmin()">✕</button>
+  <div class="lc" id="lc"><div class="lring"><div class="lav">${av?`<img src="${esc(av)}" alt="">`:`<span>${esc(S.logo)}</span>`}</div></div>
+  <h2>${esc(S.name)}</h2><p class="ls">অ্যাডমিন কন্ট্রোল প্যানেল</p>
+  <label class="fi"><span>📱</span><input id="lu" type="tel" placeholder="ইউজার আইডি (ফোন নম্বর)" autocomplete="username"></label>
+  <label class="fi"><span>🔒</span><input id="lp" type="password" placeholder="পাসওয়ার্ড" autocomplete="current-password" onkeydown="if(event.key==='Enter')doLogin()"><b class="eye" onclick="const i=$('#lp');i.type=i.type==='password'?'text':'password'">👁</b></label>
+  <p id="le"></p><button class="lb" id="lbtn" onclick="doLogin()"><span>লগইন করুন</span></button>
+  <small class="lsec">শুধু অনুমোদিত ব্যবহারকারীর জন্য</small></div></div>`;
+  setTimeout(()=>{const u=$('#lu');if(u)u.focus()},700);
+}
+async function newDoLogin(){
+  const b=$('#lbtn'),e=$('#le'),c=$('#lc');b.classList.add('ld');e.textContent='';
+  const h=await sha($('#lu').value.trim()+':'+$('#lp').value+':shop-v1');
+  await new Promise(r=>setTimeout(r,500));
+  if(h===D.auth){authed=true;curUser=$('#lu').value.trim();c.classList.add('ok');setTimeout(()=>{store();adm()},550)}
+  else{b.classList.remove('ld');e.textContent='ফোন নম্বর বা পাসওয়ার্ড ভুল';c.classList.remove('shake');void c.offsetWidth;c.classList.add('shake')}
+}
+function imgBox(){
+  const S=D.shop,im=k=>S[k]?`<img src="${esc(S[k])}" alt="">`:'';
+  return `<div class="c2"><b>🖼️ অ্যাডমিনের ছবি ও সাইটের লোগো</b>
+  <div class="row"><div class="thumb" style="border-radius:50%">${im('adminImg')||'👤'}</div><label class="btn">📷 অ্যাডমিনের ছবি<input type="file" accept="image/*" hidden onchange="upShop(this,'adminImg')"></label><button onclick="rmShop('adminImg')">🗑</button></div>
+  <div class="row"><div class="thumb" style="border-radius:50%">${im('logoImg')||esc(S.logo)}</div><label class="btn">📷 সাইটের লোগো<input type="file" accept="image/*" hidden onchange="upShop(this,'logoImg')"></label><button onclick="rmShop('logoImg')">🗑</button></div>
+  <small>অ্যাডমিনের ছবি লগইন পেজ ও প্যানেলে দেখায়। লোগো সাইটের উপরে দেখায়। ছবি না দিলে ইমোজি লোগো থাকবে।</small></div>`;
+}
+async function upShop(el,k){
+  const f=el.files[0];if(!f)return;
+  try{const a=await claude.use('assets');if(!a){alert('ছবি আপলোডের অনুমতি নেই (আপনার Claude অ্যাকাউন্টে লগইন করে খুলুন)');return}
+    const r=await a.upload(f);D.shop[k]=r.url;mark();adm();store()}catch(e){alert('আপলোড হয়নি: '+(e.message||e.code))}
+}
+function rmShop(k){D.shop[k]='';mark();adm();store()}
+const qs={};
+const gq=id=>qs[id]||1,bq=n=>Number(n).toLocaleString('bn-BD');
+function stepper(id){const p=D.products.find(x=>x.id===id);return `<div class="stp"><button onclick="qchg(${id},-1)" aria-label="কমান">−</button><b data-q="${id}">${bq(gq(id))}</b><button onclick="qchg(${id},1)" aria-label="বাড়ান">+</button><span class="tot">মোট: <b data-t="${id}">${tk(p.price*gq(id))}</b></span></div>`}
+function qchg(id,d){
+  const p=D.products.find(x=>x.id===id);qs[id]=Math.min(99,Math.max(1,gq(id)+d));
+  document.querySelectorAll(`[data-q="${id}"]`).forEach(e=>e.textContent=bq(qs[id]));
+  document.querySelectorAll(`[data-t="${id}"]`).forEach(e=>e.textContent=tk(p.price*qs[id]));
+}
+function buy2(id){
+  const p=D.products.find(x=>x.id===id),q=gq(id);
+  window.open(waUrl(`আসসালামু আলাইকুম, আমি এই পণ্যটি অর্ডার করতে চাই:\n\nপণ্য: ${p.name}\nসংখ্যা: ${bq(q)}টি\nদাম: ${tk(p.price)} × ${bq(q)} = মোট ${tk(p.price*q)}`),'_blank');
+}
+function submit2(id){
+  const p=D.products.find(x=>x.id===id),q=gq(id);
+  if(!fm.n.trim()||!fm.p.trim()||!fm.a.trim()){$('#fe').textContent='নাম, ফোন নাম্বার ও ঠিকানা দিন';return}
+  window.open(waUrl(`আসসালামু আলাইকুম, আমি অর্ডার করতে চাই:\n\nপণ্য: ${p.name}\nসংখ্যা: ${bq(q)}টি\nএকটির দাম: ${tk(p.price)}\nমোট: ${tk(p.price*q)}\n\nনাম: ${fm.n.trim()}\nফোন: ${fm.p.trim()}\nইমেইল: ${fm.e.trim()||'-'}\nঠিকানা: ${fm.a.trim()}`),'_blank');
+}
+function catBox(){
+  return D.cats.map((c,i)=>`<div class="c2"><div class="row"><input style="flex:0 0 64px;text-align:center" value="${esc(c.icon)}" onchange="catSet(${i},'icon',this.value)"><input value="${esc(c.name)}" onchange="catSet(${i},'name',this.value)"><button onclick="catMove(${i},-1)">↑</button><button onclick="catMove(${i},1)">↓</button><button onclick="catDel(${i})">🗑</button></div></div>`).join('')+`<button class="pri btn" onclick="catAdd()">+ নতুন ক্যাটাগরি</button><p><small>বাঁ দিকের ঘরে ইমোজি, পাশের ঘরে নাম। নাম বদলালে সেই ক্যাটাগরির সব পণ্যও নতুন নামে চলে যাবে। ক্যাটাগরি মুছলে পণ্য মুছবে না, শুধু ক্যাটাগরি ছাড়া হবে। পণ্যের ক্যাটাগরি পণ্য এডিটে ড্রপডাউন থেকে বাছবেন।</small></p>`;
+}
+function catSet(i,f,v){
+  const c=D.cats[i];
+  if(f==='name'){v=v.trim();if(!v||v==='সব'||D.cats.some((x,j)=>j!==i&&x.name===v)){alert('নামটি ফাঁকা, "সব" অথবা আগে থেকেই আছে');adm();return}
+    D.products.forEach(p=>{if(p.cat===c.name)p.cat=v});if(cat===c.name)cat=v}
+  c[f]=v;mark();adm();store();
+}
+function catMove(i,d){const j=i+d;if(j<0||j>=D.cats.length)return;[D.cats[i],D.cats[j]]=[D.cats[j],D.cats[i]];mark();adm();store()}
+function catDel(i){
+  if(!confirm('ক্যাটাগরি মুছবেন? পণ্য মুছবে না।'))return;
+  const n=D.cats[i].name;D.products.forEach(p=>{if(p.cat===n)p.cat=''});if(cat===n)cat='সব';D.cats.splice(i,1);mark();adm();store();
+}
+function catAdd(){
+  let n='নতুন ক্যাটাগরি',k=1;while(D.cats.some(c=>c.name===n))n='নতুন ক্যাটাগরি '+(++k);
+  D.cats.push({name:n,icon:'🌿'});mark();adm();store();
+}
+function set(k,i,f,v){D[k][i][f]=v;mark();store()}
+function del(k,i){if(confirm('মুছে ফেলবেন?')){D[k].splice(i,1);mark();adm();store()}}
+function addItem(k){D[k].push(k==='products'?{id:Date.now(),name:'নতুন পণ্য',price:0,old:0,cat:'',emoji:'🌿',img:'',desc:''}:{title:'নতুন ব্যানার',sub:'',img:'',bg:'linear-gradient(135deg,#2e7d32,#9ccc65)'});mark();adm();store()}
+async function up(el,k,i){
+  const f=el.files[0];if(!f)return;
+  try{const a=await claude.use('assets');if(!a){alert('ছবি আপলোডের অনুমতি নেই (আপনার Claude অ্যাকাউন্টে লগইন করে খুলুন)');return}
+    const r=await a.upload(f);D[k][i].img=r.url;mark();adm();store()}catch(e){alert('আপলোড হয়নি: '+(e.message||e.code))}
+}
+async function save(){
+  try{const a=await claude.use('artifact');if(!a){alert('সেভ করতে আপনার Claude অ্যাকাউন্টে লগইন করা অবস্থায় সাইটটা খুলুন (শুধু মালিক সেভ করতে পারেন)');return}
+    const c=document.documentElement.cloneNode(true);
+    c.querySelector('#app').innerHTML='';c.querySelector('#admin').innerHTML='';c.querySelector('#admin').className='ov';
+    c.querySelector('#data').textContent=JSON.stringify(D).replace(/</g,'\\u003c');
+    await a.publish('<!DOCTYPE html>\n'+c.outerHTML);
+  }catch(e){alert('সেভ হয়নি: '+(e.message||e.code))}
+}
+store();
+setInterval(()=>{if(D.banners.length>1){bi++;banner()}},4000);
+</script>
+
+
+</body></html>
